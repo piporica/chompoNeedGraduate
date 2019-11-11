@@ -1,6 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/main_bg" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/music_top" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ImageButton
+            android:id="@+id/mu1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/mu4"
+            app:layout_constraintVertical_bias="0.6"
+            app:srcCompat="@drawable/m2"
+            app:layout_constraintEnd_toStartOf="@+id/mu2" />
+
+        <ImageButton
+            android:id="@+id/mu2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintBottom_toTopOf="@id/mu5"
+            app:layout_constraintEnd_toStartOf="@id/mu3"
+            app:layout_constraintStart_toEndOf="@+id/mu1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.6"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:srcCompat="@drawable/m3" />
+
+        <ImageButton
+            android:id="@+id/mu3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/mu2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/mu6"
+            app:layout_constraintVertical_bias="0.6"
+            app:srcCompat="@drawable/m4" />
+
+        <ImageButton
+            android:id="@+id/mu4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintTop_toBottomOf="@id/mu1"
+            app:layout_constraintBottom_toTopOf="@id/mu7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/mu5"
+            app:srcCompat="@drawable/m5" />
+
+        <ImageButton
+            android:id="@+id/mu5"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintStart_toEndOf="@id/mu4"
+            app:layout_constraintEnd_toStartOf="@id/mu6"
+            app:layout_constraintTop_toBottomOf="@id/mu2"
+            app:layout_constraintBottom_toTopOf="@id/mu8"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/m7"/>
+
+        <ImageButton
+            android:id="@+id/mu6"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/mu5"
+            app:layout_constraintTop_toBottomOf="@id/mu3"
+            app:layout_constraintBottom_toTopOf="@id/mu9"
+            app:srcCompat="@drawable/m8"/>
+
+        <ImageButton
+            android:id="@+id/mu7"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/mu8"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mu4"
+            app:srcCompat="@drawable/m6" />
+
+        <ImageButton
+            android:id="@+id/mu8"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintStart_toEndOf="@id/mu7"
+            app:layout_constraintEnd_toStartOf="@id/mu9"
+            app:layout_constraintTop_toBottomOf="@id/mu5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:srcCompat="@drawable/m9" />
+
+        <ImageButton
+            android:id="@+id/mu9"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/mu8"
+            app:layout_constraintTop_toBottomOf="@id/mu6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:srcCompat="@drawable/m1" />
+
+        <ImageButton
+            android:id="@+id/imageButton13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/map_back_btn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
