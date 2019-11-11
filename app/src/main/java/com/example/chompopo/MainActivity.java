@@ -4,20 +4,23 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
+    String station;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         //화면전환
-        ImageButton selectmap = (ImageButton)findViewById(R.id.selectmap);
-        ImageButton setting = (ImageButton)findViewById(R.id.settingbtn);
-        ImageButton musicsetting = (ImageButton)findViewById(R.id.musicbtn);
+        ImageButton selectmap = findViewById(R.id.selectmap);
+        ImageButton setting = findViewById(R.id.settingbtn);
+        ImageButton musicsetting = findViewById(R.id.musicbtn);
 
         //맵
         selectmap.setOnClickListener(new View.OnClickListener() {
@@ -26,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(
                         getApplicationContext(),
                         mapActivity.class);
+                intent.putExtra("station", station);
                 startActivity(intent);
             }
         });
@@ -51,6 +55,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Intent intent = getIntent();
+        String sub = intent.getExtras().getString("station");
+        ImageView iv = findViewById(R.id.station_img);
+        station = sub;
+        if(sub.equals("nkh"))
+        {
+            iv.setImageResource(R.drawable.newkh);
+        }
 
     }
 

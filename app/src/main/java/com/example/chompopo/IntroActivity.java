@@ -27,10 +27,11 @@ public class IntroActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent.putExtra("station","zs");
                 startActivity(intent);
                 finish();
             }
-        },5000);
+        },500);
 
     }
 
