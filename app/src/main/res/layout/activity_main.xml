@@ -28,7 +28,7 @@
 
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/selectmap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="63dp"
@@ -50,7 +50,7 @@
             app:layout_constraintEnd_toStartOf="@+id/musicbtn"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton3"
+            app:layout_constraintTop_toBottomOf="@+id/selectmap"
             app:srcCompat="@drawable/setting_btn" />
 
         <ImageButton
@@ -62,7 +62,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/settingbtn"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton3"
+            app:layout_constraintTop_toBottomOf="@+id/selectmap"
             app:srcCompat="@drawable/setmusic_btn" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

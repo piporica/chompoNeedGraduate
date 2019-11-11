@@ -73,16 +73,19 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:visibility="invisible"
                         app:srcCompat="@drawable/circle2"></ImageView>
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:visibility="invisible"
                         app:srcCompat="@drawable/circle3"></ImageView>
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:visibility="invisible"
                         app:srcCompat="@drawable/circle4"></ImageView>
                 </FrameLayout>
 
@@ -103,16 +106,19 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:visibility="invisible"
                         app:srcCompat="@drawable/circle2"></ImageView>
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:visibility="invisible"
                         app:srcCompat="@drawable/circle3"></ImageView>
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:visibility="invisible"
                         app:srcCompat="@drawable/circle4"></ImageView>
                 </FrameLayout>
 
@@ -133,16 +139,19 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:visibility="invisible"
                         app:srcCompat="@drawable/circle2"></ImageView>
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:visibility="invisible"
                         app:srcCompat="@drawable/circle3"></ImageView>
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:visibility="invisible"
                         app:srcCompat="@drawable/circle4"></ImageView>
                 </FrameLayout>
 
@@ -163,16 +172,19 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:visibility="invisible"
                         app:srcCompat="@drawable/circle2"></ImageView>
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:visibility="invisible"
                         app:srcCompat="@drawable/circle3"></ImageView>
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:visibility="invisible"
                         app:srcCompat="@drawable/circle4"></ImageView>
                 </FrameLayout>
 
@@ -193,16 +205,19 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:visibility="invisible"
                         app:srcCompat="@drawable/circle2"></ImageView>
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:visibility="invisible"
                         app:srcCompat="@drawable/circle3"></ImageView>
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:visibility="invisible"
                         app:srcCompat="@drawable/circle4"></ImageView>
                 </FrameLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
