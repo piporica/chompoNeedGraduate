@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(
                         getApplicationContext(),
                         SettingActivity.class);
+                intent.putExtra("station", station);
                 startActivity(intent);
             }
         });
@@ -64,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
         {
             iv.setImageResource(R.drawable.newkh);
         }
-
     }
 
 }

@@ -102,7 +102,8 @@ public class mapActivity extends AppCompatActivity  {
                 Intent intent = new Intent(
                         getApplicationContext(),
                         MainActivity.class);
-                intent.putExtra("station","nkh");
+                if(mode == OFF) station = "nkh";
+                intent.putExtra("station",station);
                 startActivity(intent);
             }
         });
@@ -223,13 +224,6 @@ public class mapActivity extends AppCompatActivity  {
         return 1;
     }
 
-    //드래그 이동 + 확대 + 가능하다면 더블탭 확대
-
-
-    private void surviveBtns(MotionEvent event)
-    {
-
-    }
 }
 
 //신금호-비율로 짜야 정확함
