@@ -213,6 +213,8 @@ public class mapActivity extends AppCompatActivity  {
         float realx = (event.getX()-f1[2])/f1[0];
         float realy = (event.getY()-f1[5])/f1[0];
 
+        Log.i("wh","w: "+realx+"y :"+realy);
+
         if((realx>3759 && realx <3850)&&(realy>1570 && realy<1670))
         {
             mode = NONE;

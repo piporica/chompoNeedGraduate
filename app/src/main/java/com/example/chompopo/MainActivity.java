@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         ImageButton selectmap = findViewById(R.id.selectmap);
         ImageButton setting = findViewById(R.id.settingbtn);
         ImageButton musicsetting = findViewById(R.id.musicbtn);
+        Button player = findViewById(R.id.player);
 
         //맵
         selectmap.setOnClickListener(new View.OnClickListener() {
@@ -30,6 +32,17 @@ public class MainActivity extends AppCompatActivity {
                         getApplicationContext(),
                         mapActivity.class);
                 intent.putExtra("station", station);
+                startActivity(intent);
+            }
+        });
+
+        //플레이어
+        player.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(
+                        getApplicationContext(),
+                        playerActivity.class);
                 startActivity(intent);
             }
         });

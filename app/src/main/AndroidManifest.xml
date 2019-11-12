@@ -21,6 +21,7 @@
         <activity android:name=".MusicSettingActivity"></activity>
         <activity android:name=".OuttroActivity"></activity>
         <activity android:name=".mapActivity"></activity>
+        <activity android:name=".playerActivity"></activity>
     </application>
 
 </manifest>
