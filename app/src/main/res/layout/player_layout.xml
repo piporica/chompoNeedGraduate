@@ -20,7 +20,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imageView12"
+            android:id="@+id/texts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -40,7 +40,7 @@
             app:layout_constraintBottom_toTopOf="@id/score"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView12">
+            app:layout_constraintTop_toBottomOf="@+id/texts">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -71,18 +71,21 @@
                         app:srcCompat="@drawable/circle1"></ImageView>
 
                     <ImageView
+                        android:id="@+id/c1_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:visibility="invisible"
                         app:srcCompat="@drawable/circle2"></ImageView>
 
                     <ImageView
+                        android:id="@+id/c1_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:visibility="invisible"
                         app:srcCompat="@drawable/circle3"></ImageView>
 
                     <ImageView
+                        android:id="@+id/c1_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:visibility="invisible"
@@ -104,18 +107,21 @@
                         app:srcCompat="@drawable/circle1"></ImageView>
 
                     <ImageView
+                        android:id="@+id/c2_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:visibility="invisible"
                         app:srcCompat="@drawable/circle2"></ImageView>
 
                     <ImageView
+                        android:id="@+id/c2_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:visibility="invisible"
                         app:srcCompat="@drawable/circle3"></ImageView>
 
                     <ImageView
+                        android:id="@+id/c2_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:visibility="invisible"
@@ -137,18 +143,21 @@
                         app:srcCompat="@drawable/circle1"></ImageView>
 
                     <ImageView
+                        android:id="@+id/c3_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:visibility="invisible"
                         app:srcCompat="@drawable/circle2"></ImageView>
 
                     <ImageView
+                        android:id="@+id/c3_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:visibility="invisible"
                         app:srcCompat="@drawable/circle3"></ImageView>
 
                     <ImageView
+                        android:id="@+id/c3_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:visibility="invisible"
@@ -170,18 +179,21 @@
                         app:srcCompat="@drawable/circle1"></ImageView>
 
                     <ImageView
+                        android:id="@+id/c4_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:visibility="invisible"
                         app:srcCompat="@drawable/circle2"></ImageView>
 
                     <ImageView
+                        android:id="@+id/c4_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:visibility="invisible"
                         app:srcCompat="@drawable/circle3"></ImageView>
 
                     <ImageView
+                        android:id="@+id/c4_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:visibility="invisible"
@@ -203,18 +215,21 @@
                         app:srcCompat="@drawable/circle1"></ImageView>
 
                     <ImageView
+                        android:id="@+id/c5_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:visibility="invisible"
                         app:srcCompat="@drawable/circle2"></ImageView>
 
                     <ImageView
+                        android:id="@+id/c5_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:visibility="invisible"
                         app:srcCompat="@drawable/circle3"></ImageView>
 
                     <ImageView
+                        android:id="@+id/c5_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:visibility="invisible"

@@ -1,5 +1,6 @@
 package com.example.chompopo;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.view.animation.AlphaAnimation;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 public class OuttroActivity extends AppCompatActivity {
     @Override
@@ -14,13 +16,14 @@ public class OuttroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.outtro_layout);
 
+        final OuttroActivity here = this;
         outtroAnim();
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                finish();
+                ActivityCompat.finishAffinity(here);
             }
         },5000);
     }
