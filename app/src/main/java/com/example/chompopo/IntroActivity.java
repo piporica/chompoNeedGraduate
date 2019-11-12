@@ -33,6 +33,9 @@ public class IntroActivity extends AppCompatActivity {
             }
         },500);
 
+
+        ((MyApp)this.getApplication()).setmusic(1); // 최초음악설정
+
     }
 
     @Override

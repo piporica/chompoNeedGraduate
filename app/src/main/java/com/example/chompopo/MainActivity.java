@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(
                         getApplicationContext(),
                         MusicSettingActivity.class);
+                intent.putExtra("station", station);
                 startActivity(intent);
             }
         });
