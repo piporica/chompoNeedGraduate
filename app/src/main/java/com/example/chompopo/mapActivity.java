@@ -65,6 +65,7 @@ public class mapActivity extends AppCompatActivity  {
         mapWidth = map.getDrawable().getIntrinsicWidth();
         mapHeight = map.getDrawable().getIntrinsicHeight();
 
+
         //화면크기
         DisplayMetrics dm = getApplicationContext().getResources().getDisplayMetrics();
         dwidth = dm.widthPixels;
@@ -209,13 +210,21 @@ public class mapActivity extends AppCompatActivity  {
     {
         //신금호 : 931~963 / 391~416
         float[] f1 = new float[9];
+
         matrix.getValues(f1);
         float realx = (event.getX()-f1[2])/f1[0];
         float realy = (event.getY()-f1[5])/f1[0];
 
+        Log.i("map","= "+mapWidth+"/"+mapHeight);
         Log.i("wh","w: "+realx+"y :"+realy);
 
-        if((realx>3759 && realx <3850)&&(realy>1570 && realy<1670))
+
+        float nkhXmin = 0.5875f*mapWidth;
+        float nkhXmax = 0.6015f*mapWidth;
+        float nkhYmin = 0.3760f*mapHeight;
+        float nkhYmax = 0.4000f*mapHeight;
+
+        if((realx>nkhXmin && realx <nkhXmax)&&(realy>nkhYmin && realy<nkhYmax))
         {
             mode = NONE;
             findViewById(R.id.nkh).setVisibility(View.VISIBLE);

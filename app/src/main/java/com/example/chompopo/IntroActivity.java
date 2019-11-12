@@ -31,7 +31,7 @@ public class IntroActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        },500);
+        },5000);
 
 
         ((MyApp)this.getApplication()).setmusic(1); // 최초음악설정
