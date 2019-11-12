@@ -2,6 +2,7 @@ package com.example.chompopo;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.media.PlaybackParams;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -22,6 +23,7 @@ public class playerActivity extends AppCompatActivity {
 
     timeHandler timeHandler = null;
 
+    float speed;
     MediaPlayer musicPlayer1;
     MediaPlayer musicPlayer2;
     MediaPlayer musicPlayer3;
@@ -54,6 +56,59 @@ public class playerActivity extends AppCompatActivity {
         blinkanims();
         timeHandler.sendEmptyMessage(MSG_START);
 
+        speed = 1.0f;
+
+        //테스트용 버튼 리스너
+        (findViewById(R.id.btn1)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                speed = 1.0f;
+                switch (phase)
+                {
+                    case 1:
+                        musicPlayer1.setPlaybackParams(new PlaybackParams().setSpeed(speed));
+                        break;
+                    case 2:
+                        musicPlayer2.setPlaybackParams(new PlaybackParams().setSpeed(speed));
+                        break;
+                    case 3:
+                        musicPlayer3.setPlaybackParams(new PlaybackParams().setSpeed(speed));
+                        break;
+                    case 4:
+                        musicPlayer4.setPlaybackParams(new PlaybackParams().setSpeed(speed));
+                        break;
+                    case 5:
+                        musicPlayer4.setPlaybackParams(new PlaybackParams().setSpeed(speed));
+                        break;
+                }
+            }
+        });
+
+        (findViewById(R.id.btn2)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                speed = 1.5f;
+                switch (phase)
+                {
+                    case 1:
+                        musicPlayer1.setPlaybackParams(new PlaybackParams().setSpeed(speed));
+                        break;
+                    case 2:
+                        musicPlayer2.setPlaybackParams(new PlaybackParams().setSpeed(speed));
+                        break;
+                    case 3:
+                        musicPlayer3.setPlaybackParams(new PlaybackParams().setSpeed(speed));
+                        break;
+                    case 4:
+                        musicPlayer4.setPlaybackParams(new PlaybackParams().setSpeed(speed));
+                        break;
+                    case 5:
+                        musicPlayer4.setPlaybackParams(new PlaybackParams().setSpeed(speed));
+                        break;
+                }
+            }
+        });
+
 
         //미디어 셋
         musicPlayer1 = MediaPlayer.create(this,R.raw.f);
@@ -79,6 +134,7 @@ public class playerActivity extends AppCompatActivity {
                     case 2 :
                         musicPlayer1.stop();
                         musicPlayer1.release();
+                        musicPlayer2.setPlaybackParams(new PlaybackParams().setSpeed(speed));
                         musicPlayer2.start();
                         timeHandler.sendEmptyMessage(MSG_START);
                         texts.setImageResource(R.drawable.text2);
@@ -87,6 +143,7 @@ public class playerActivity extends AppCompatActivity {
                     case 3 :
                         musicPlayer2.stop();
                         musicPlayer2.release();
+                        musicPlayer3.setPlaybackParams(new PlaybackParams().setSpeed(speed));
                         musicPlayer3.start();
 
                         timeHandler.sendEmptyMessage(MSG_START);
@@ -95,6 +152,7 @@ public class playerActivity extends AppCompatActivity {
                     case 4 :
                         musicPlayer3.stop();
                         musicPlayer3.release();
+                        musicPlayer4.setPlaybackParams(new PlaybackParams().setSpeed(speed));
                         musicPlayer4.start();
                         timeHandler.sendEmptyMessage(MSG_START);
                         texts.setImageResource(R.drawable.text4);
