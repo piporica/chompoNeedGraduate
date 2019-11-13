@@ -1,18 +1,29 @@
 package com.example.chompopo;
 
 import android.content.Intent;
+import android.graphics.Matrix;
 import android.media.MediaPlayer;
 import android.media.PlaybackParams;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.Layout;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.AnimationSet;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.TranslateAnimation;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 public class playerActivity extends AppCompatActivity {
@@ -22,6 +33,7 @@ public class playerActivity extends AppCompatActivity {
     private static final int MSG_DELETE = 102;
 
     timeHandler timeHandler = null;
+    makenote makenote = null;
 
     float speed;
     MediaPlayer musicPlayer1;
@@ -41,6 +53,7 @@ public class playerActivity extends AppCompatActivity {
 
     playerActivity activity = this;
 
+
     @Override
     public void onCreate(Bundle savedIns)
     {
@@ -50,13 +63,18 @@ public class playerActivity extends AppCompatActivity {
         circle2 = findViewById(R.id.c1_2);
         circle3 = findViewById(R.id.c1_3);
         phase = 1;
+        speed = 1.0f;
+
 
         timeHandler = new timeHandler();
+        makenote = new makenote();
 
         blinkanims();
         timeHandler.sendEmptyMessage(MSG_START);
+        makenote.sendEmptyMessage(0);
 
-        speed = 1.0f;
+//        movingnotes((FrameLayout) findViewById(R.id.musicscore));
+
 
         //테스트용 버튼 리스너
         (findViewById(R.id.btn1)).setOnClickListener(new View.OnClickListener() {
@@ -172,6 +190,9 @@ public class playerActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+
 
     }
 
@@ -307,6 +328,100 @@ public class playerActivity extends AppCompatActivity {
             }
         }
     };
+
+
+    private class makenote extends Handler
+    {
+        int count = 0;
+        @Override
+        public void handleMessage(Message msg)
+        {
+            movingnotes((FrameLayout) findViewById(R.id.musicscore));
+            this.sendEmptyMessageDelayed(0,300);
+        }
+    };
+
+
+    public void movingnotes(FrameLayout l)
+    {
+        FrameLayout layout = l;
+
+        //뷰크기 구하기 = 이미지크기일거임
+        ImageView score = findViewById(R.id.score);
+        float scoreW = score.getDrawable().getIntrinsicWidth();
+
+        //동적추가, Span 랜덤
+        //~5*scoreW/32 다섯가지 랜덤
+        Random rand = new Random();
+        ImageView iv = new ImageView(this);
+        iv.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        int ranname = rand.nextInt(3);
+
+        switch (ranname)
+        {
+            case 0 : iv.setImageResource(R.drawable.note1);
+            break;
+            case 1 : iv.setImageResource(R.drawable.note2);
+            break;
+            case 2 : iv.setImageResource(R.drawable.note3);
+            break;
+        }
+
+        iv.setScaleType(ImageView.ScaleType.MATRIX);
+        final Matrix matrix = new Matrix();
+
+        int randomint = rand.nextInt(5);
+        matrix.postTranslate(scoreW/2, (randomint+1)*scoreW/32);
+        iv.setImageMatrix(matrix);
+
+        AlphaAnimation al = new AlphaAnimation(1,0);
+        al.setDuration(1100);
+        al.setStartOffset(1000);
+        al.setInterpolator(new AccelerateInterpolator());
+
+        TranslateAnimation tr = new TranslateAnimation(scoreW*0.5f,-scoreW*0.4f,0,0);
+        tr.setDuration(2000);
+        tr.setInterpolator(new LinearInterpolator());
+
+        AnimationSet aset = new AnimationSet(true);
+        aset.setFillAfter(true);
+        aset.addAnimation(al);
+        aset.addAnimation(tr);
+
+        iv.startAnimation(aset);
+        layout.addView(iv);
+    }
+
+    @Override
+    public void onPause()
+    {
+        switch (phase)
+        {
+            case 1:
+                musicPlayer1.stop();
+                musicPlayer1.release();
+                break;
+            case 2:
+                musicPlayer2.stop();
+                musicPlayer2.release();
+            case 3:
+                musicPlayer3.stop();
+                musicPlayer3.release();
+                break;
+            case 4:
+                musicPlayer4.stop();
+                musicPlayer4.release();
+                break;
+            case 5:
+                musicPlayer4.stop();
+                musicPlayer4.release();
+                break;
+        }
+        makenote.removeMessages(0);
+        super.onPause();
+
+    }
+
 }
 
 
