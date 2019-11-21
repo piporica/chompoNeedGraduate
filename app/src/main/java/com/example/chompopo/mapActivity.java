@@ -166,24 +166,46 @@ public class mapActivity extends AppCompatActivity  {
                             matrix.set(svmatrix);
                             matrix.postTranslate(event.getX()-start.x,event.getY()-start.y);
 
-
-
                         }
                         else if(mode == ZOOM)
                         {
                             float newDist = spacing(event);
+                            float[] zoomcheck = new float[9];
                             if(newDist > 10f)
                             {
                                 matrix.set(svmatrix);
+                                matrix.getValues(zoomcheck);
                                 float scale = newDist/oldDist;
-                                matrix.postScale(scale,scale,mid.x,mid.y);
+
+                                if(zoomcheck[0]*scale < 3.0f && zoomcheck[0]*scale > 0.5f)
+                                {
+                                    matrix.postScale(scale,scale,mid.x,mid.y);
+                                }
+
+                                else if(zoomcheck[0]*scale >= 3.0f)
+                                {
+                                    float fix3 = 3f/zoomcheck[0];
+                                    matrix.postScale(fix3,fix3,mid.x,mid.y);
+                                }
+                                else if(zoomcheck[0]*scale <= 0.5f)
+                                {
+                                    float fix5 = 0.5f/zoomcheck[0];
+                                    matrix.postScale(fix5,fix5,mid.x,mid.y);
+                                }
+
+                                Log.i("why,,,,,","matrix 값: "+zoomcheck[0]+"찍히는 스케일"+scale);
+                                Log.i("how......","midx 값: "+mid.x);
 
                             }
                         }
                         break;
                 }
 
+                fixing();
                 view.setImageMatrix(matrix);
+                float[] fcheck = new float[9];
+                matrix.getValues(fcheck);
+                Log.i("how......","x: "+fcheck[2]);
                 checkpoint(event);
                 return true;
             }
@@ -233,6 +255,33 @@ public class mapActivity extends AppCompatActivity  {
         }
 
         return 1;
+    }
+
+    public void fixing()
+    {
+        float[] values = new float[9];
+        matrix.getValues(values);
+
+        //빠져나가지 않게-x
+        if(values[2] > dwidth*0.9f)
+        {
+            values[2] = dwidth*0.8f;
+        }
+        else if(values[2] < -(mapWidth*values[0]-dwidth*0.1f))
+        {
+            values[2] = -(mapWidth*values[0]-dwidth*0.2f);
+        }
+        //y
+        if(values[5] > dheight*0.9f)
+        {
+            values[5] = dheight*0.8f;
+        }
+        else if(values[5] < -(mapHeight*values[0]-dwidth*0.1f))
+        {
+            values[5] = -(mapHeight*values[0]-dwidth*0.2f);
+        }
+
+        matrix.setValues(values);
     }
 
 }

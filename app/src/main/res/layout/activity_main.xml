@@ -9,18 +9,25 @@
 
 
     <ImageView
-        android:id="@+id/intro_img"
+        android:id="@+id/main_bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/main_bg" />
 
     <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/this_station" />
+
+    <ImageView
         android:id="@+id/station_img"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/jamsil_img" />
+        android:visibility="visible"
+        app:srcCompat="@drawable/zs" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

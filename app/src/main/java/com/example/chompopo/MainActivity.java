@@ -1,7 +1,9 @@
 package com.example.chompopo;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -74,11 +76,36 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String sub = intent.getExtras().getString("station");
         ImageView iv = findViewById(R.id.station_img);
+        ImageView bg = findViewById(R.id.main_bg);
         station = sub;
         if(sub.equals("nkh"))
         {
             iv.setImageResource(R.drawable.newkh);
+            bg.setImageResource(R.drawable.bk_nkh);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder alert_ex = new AlertDialog.Builder(this);
+        alert_ex.setMessage("정말로 종료하시겠습니까?");
+
+        alert_ex.setPositiveButton("취소", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        alert_ex.setNegativeButton("종료", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finishAffinity();
+            }
+        });
+        alert_ex.setTitle("Walking Muse");
+        AlertDialog alert = alert_ex.create();
+        alert.show();
+
     }
 
 }

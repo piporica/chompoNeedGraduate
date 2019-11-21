@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.TranslateAnimation;
@@ -337,7 +338,7 @@ public class playerActivity extends AppCompatActivity {
         public void handleMessage(Message msg)
         {
             movingnotes((FrameLayout) findViewById(R.id.musicscore));
-            this.sendEmptyMessageDelayed(0,300);
+            this.sendEmptyMessageDelayed(0,900);
         }
     };
 
@@ -375,13 +376,11 @@ public class playerActivity extends AppCompatActivity {
         iv.setImageMatrix(matrix);
 
         AlphaAnimation al = new AlphaAnimation(1,0);
-        al.setDuration(1100);
-        al.setStartOffset(1000);
-        al.setInterpolator(new AccelerateInterpolator());
+        al.setDuration(400);
+        al.setStartOffset(4800);
 
-        TranslateAnimation tr = new TranslateAnimation(scoreW*0.5f,-scoreW*0.4f,0,0);
-        tr.setDuration(2000);
-        tr.setInterpolator(new LinearInterpolator());
+        TranslateAnimation tr = new TranslateAnimation(scoreW*0.4f,-scoreW*0.6f,0,0);
+        tr.setDuration(7500);
 
         AnimationSet aset = new AnimationSet(true);
         aset.setFillAfter(true);
@@ -390,6 +389,7 @@ public class playerActivity extends AppCompatActivity {
 
         iv.startAnimation(aset);
         layout.addView(iv);
+
     }
 
     @Override
